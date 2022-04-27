@@ -12,5 +12,32 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
+  function upperEachWord(str) {
+    let newStr = "";
+    for (let i = 0; i < str.length; i++) {
+      if (str.charAt(i) === " ") {
+        newStr += " ";
+        newStr += str.charAt(i + 1).toUpperCase();
+        i = i + 1;
+      }
+      else if (i === 0) {
+        newStr += str.charAt(i).toUpperCase();
+      }
+      else {
+        newStr += str.charAt(i)
+      }
+    }
+    return newStr;
+  }
+  
+
+
+
+  //for (let i = 0; i < tutorials.length; i++) {
+  //  tutorials[i] = upperEachWord(tutorials[i]);
+  //}
+
+  let newTutorials = tutorials.map((str) => upperEachWord(str));
+  
+  return newTutorials;
 }
